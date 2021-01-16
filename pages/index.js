@@ -4,8 +4,7 @@ import Head from 'next/head';
 import Chart from '@components/Chart';
 import ChartBTC from '@components/ChartBTC';
 import twelvedata from 'twelvedata';
-export default function Home({ data, btc }) {
-  console.log(btc);
+export default function Home({ btc }) {
   return (
     <div className="container">
       <Head>
@@ -22,7 +21,7 @@ export default function Home({ data, btc }) {
   );
 }
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const config = {
     key: process.env.TWELVE_API_KEY,
   };
@@ -49,7 +48,6 @@ export async function getStaticProps() {
   const btc = await client.timeSeries(paramsBTC);
   return {
     props: {
-      // data,
       btc,
     },
   };

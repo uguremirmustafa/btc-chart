@@ -8,11 +8,6 @@ function Chart({ btc }) {
     datasets: [
       {
         label: `${btc.meta.symbol} stock prices`,
-        data: btc.values.map((i) => i.high),
-        backgroundColor: 'rgba(1,1,1,.1)',
-      },
-      {
-        label: `${btc.meta.symbol} stock prices`,
         data: btc.values.map((i) => i.low),
         backgroundColor: 'rgba(200,1,1,0.4)',
         type: 'line',
