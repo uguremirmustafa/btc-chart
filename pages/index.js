@@ -11,6 +11,7 @@ export default function Home({ btc }) {
         <title>Next.js Starter!</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <h1>Welcome to ChartJS - BTC Project</h1>
       {/* <Chart stocks={data} /> */}
       <h2>
         btc price for last {btc.status === 'ok' && btc.values.length}{' '}
